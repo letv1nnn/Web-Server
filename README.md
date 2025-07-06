@@ -1,7 +1,34 @@
-# Multithreaded Web Server
+# ***Web Server***
 
-## Description
-This implementation is associated with the last chapter of ***The Rust Programming Languge*** book, but slightly improved. However, I am going to rrewrite and expand this server.
+## *Drscription*
+This project is a multithreaded web server that I built from scratch. I deployed it on an old laptop, effectively turning it into my own self-hosted server. Now I have a working, home-built web server running locally.
 
-## Example
-![Screenshot from 2025-07-02 21-21-01](https://github.com/user-attachments/assets/8517bfe8-ff98-4dda-8011-b1a97d106bd8) ![Screenshot from 2025-07-02 21-22-01](https://github.com/user-attachments/assets/f4ee95e4-3c44-4ab6-91ea-75154cf1becb)
+## *Technologies*
+I used Docker to containerize the server by creating a custom image and deploying it there. Additionally, I used Rust’s build system, Cargo, along with shell scripts to simplify the build and execution process.
+
+## *Build and Run*
+- *Building*
+```bash
+sh build/prep.sh
+```
+- *Running*
+```bash
+sh build/run.sh
+```
+- *Cleaning*
+```bash
+sh build/clean.sh
+```
+
+## *Usage Scenarios*
+This server can be used in several practical contexts:
+
+- **Personal Website Hosting**: Host static HTML/CSS/JS websites directly from your home network.
+- **File Server**: Share files locally or over your LAN using simple HTTP endpoints.
+- **REST API**: Serve basic JSON-based APIs for apps or IoT devices.
+- **Local Dev Server**: Use as a lightweight backend for testing frontend applications.
+- **Learning Platform**: A great base to experiment with HTTP internals, async Rust, and server design.
+- **Edge Device Service Host**: Deploy it on a low-power device (e.g., old laptop, Raspberry Pi) to run small services at the network edge.
+
+## *Examples*
+some images of running the server
