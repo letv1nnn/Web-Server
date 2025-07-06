@@ -31,4 +31,4 @@ This server can be used in several practical contexts:
 - **Edge Device Service Host**: Deploy it on a low-power device (e.g., old laptop, Raspberry Pi) to run small services at the network edge.
 
 ## *Examples*
-some images of running the server
+![image](https://github.com/user-attachments/assets/326b20fa-438d-4dd4-b7cb-9edb51d61e64)
