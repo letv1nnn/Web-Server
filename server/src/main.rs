@@ -8,9 +8,11 @@ use std::time::Duration;
 use server::ThreadPool;
 
 fn main() -> io::Result<()> {
-    let listener = match TcpListener::bind("127.0.0.1:8080") {
+    // works on local host and LAN (only if the firewall is configured!)
+    let addr= "0.0.0.0:8080";
+    let listener = match TcpListener::bind(addr) {
         Ok(listener) => {
-            println!("Server started successfully on 127.0.0.1:8080");
+            println!("Server started successfully on your LAN");
             listener
         },
         Err(e) => {
