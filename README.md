@@ -4,6 +4,9 @@
 ## *Drscription*
 This project is a multithreaded web server that I built from scratch. I deployed it on an old laptop, effectively turning it into my own self-hosted server. Now I have a working, home-built web server running locally.
 
+## *Current state*
+I've built the server that accepts GET requests and configured the firewall so other LAN devices could connect to it. Also, I've set up the build system for this project with Cargo and Shell scripts.
+
 ## *Technologies*
 I used Docker to containerize the server by creating a custom image and deploying it there. Additionally, I used Rust’s build system, Cargo, along with shell scripts to simplify the build and execution process.
 
