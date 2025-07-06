@@ -1,4 +1,5 @@
 # ***Web Server***
+(Not completed yet)
 
 ## *Drscription*
 This project is a multithreaded web server that I built from scratch. I deployed it on an old laptop, effectively turning it into my own self-hosted server. Now I have a working, home-built web server running locally.
