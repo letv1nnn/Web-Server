@@ -5,12 +5,13 @@
 This project is a multithreaded web server that I built from scratch. I deployed it on an old laptop, effectively turning it into my own self-hosted server. Now I have a working, home-built web server running locally.
 
 ## *Current state*
-I've built the server that accepts GET requests and configured the firewall so other LAN devices could connect to it. Also, I've set up the build system for this project with Cargo and Shell scripts.
+I've built a server that accepts GET requests and configured the firewall so that other LAN devices can connect to it. I've also set up the build system for this project using Cargo and shell scripts.
 
 ## *Technologies*
 I used Docker to containerize the server by creating a custom image and deploying it there. Additionally, I used Rust’s build system, Cargo, along with shell scripts to simplify the build and execution process.
 
 ## *Build and Run*
+NOTE: If you are going to run this server on your PC, you need to configure the firewall to allow LAN devices to make requests to the server. Otherwise, the server will only work on localhost.
 - *Building*
 ```bash
 sh build/prep.sh
