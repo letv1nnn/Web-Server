@@ -14,6 +14,7 @@ I used Docker to containerize the server by creating a custom image and deployin
 NOTE: If you are going to run this server on your PC, you need to configure the firewall to allow LAN devices to make requests to the server. Otherwise, the server will only work on localhost.
 - *Building*
 ```bash
+git clone git@github.com:letv1nnn/Web-Server.git
 sh build/prep.sh
 ```
 - *Running*
