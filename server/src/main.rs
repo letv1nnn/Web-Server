@@ -69,7 +69,6 @@ fn handle_client(mut stream: TcpStream) {
         let file_path = "../web-apps/404.html";
         respond_with_file(stream, file_path, "HTTP/1.1 404 NOT FOUND\r\n\r\n");
     }
-
 }
 
 fn respond_with_file(mut stream: TcpStream, file_path: &str, status_line: &str) {
@@ -82,10 +81,4 @@ fn respond_with_file(mut stream: TcpStream, file_path: &str, status_line: &str) 
 
     stream.write_all(response.as_bytes()).unwrap();
     stream.flush().unwrap();
-
-<<<<<<< HEAD
 }
-=======
-    Ok(())
-}
->>>>>>> 08d617a5a8d2d148714930a67c134789f64669b4
