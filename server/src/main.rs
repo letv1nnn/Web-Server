@@ -7,13 +7,10 @@ use std::thread;
 use std::time::Duration;
 use server::ThreadPool;
 
-<<<<<<< HEAD
 #[tokio::main]
 async fn main() -> io::Result<()> {
-=======
 fn main() -> io::Result<()> {
     // works on local host and LAN (only if the firewall is configured!)
->>>>>>> 08d617a5a8d2d148714930a67c134789f64669b4
     let addr= "0.0.0.0:8080";
     let listener = match TcpListener::bind(addr) {
         Ok(listener) => {
