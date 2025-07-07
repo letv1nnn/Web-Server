@@ -9,7 +9,6 @@ use server::ThreadPool;
 
 #[tokio::main]
 async fn main() -> io::Result<()> {
-fn main() -> io::Result<()> {
     // works on local host and LAN (only if the firewall is configured!)
     let addr= "0.0.0.0:8080";
     let listener = match TcpListener::bind(addr) {
