@@ -40,7 +40,7 @@ This server can be used in several practical contexts:
 - **Learning Platform**: A great base to experiment with HTTP internals, async Rust, and server design.
 - **Edge Device Service Host**: Deploy it on a low-power device (e.g., old laptop, Raspberry Pi) to run small services at the network edge.
 
-## *Examples*
+## *Some Images*
 ![image](https://github.com/user-attachments/assets/7d3edbc5-31dd-40ec-995a-8d137c51234f)
 
 
