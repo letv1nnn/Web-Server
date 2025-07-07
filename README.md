@@ -15,6 +15,7 @@ NOTE: If you are going to run this server on your PC, you need to configure the 
 - *Building*
 ```bash
 git clone git@github.com:letv1nnn/Web-Server.git
+cd Wev-Server/
 sh build/prep.sh
 ```
 - *Running*
