@@ -1,0 +1,15 @@
+[package]
+name = "axum-based-server"
+version = "0.1.0"
+edition = "2024"
+
+[dependencies]
+tokio = { version = "*", features = ["full"] }
+
+hyper = { version = "*" }
+serde = { version = "*", features = ["derive"] }
+serde_json = { version = "*" }
+
+axum = {version = "*"}
+tower-http = { version = "0.6.6", features = ["full"]}
+tower-cookies = { version = "0.11.0" }
