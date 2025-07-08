@@ -2,10 +2,10 @@
 (Not completed yet)
 
 ## *Drscription*
-This project is a multithreaded web server that I built from scratch. I deployed it on an old laptop, effectively turning it into my own self-hosted server. Now I have a working, home-built web server running locally.
+This project is a asynchronous and multithreaded web server that I built from scratch. I deployed it on an old laptop, effectively turning it into my own self-hosted server. Now I have a working, home-built web server running locally.
 
 ## *Current state*
-I've built a server that accepts GET requests and configured the firewall so that other LAN devices can connect to it. I've also set up the build system for this project using Cargo and shell scripts.
+This server uses Tokio’s asynchronous, multithreaded runtime to handle incoming TCP connections concurrently without blocking threads. Each client connection is processed in its own async task, using non-blocking I/O to read HTTP requests and serve static files from disk efficiently. I've also set up the build system for this project using Cargo and shell scripts.
 
 ## *Technologies*
 I used Docker to containerize the server by creating a custom image and deploying it there. Additionally, I used Rust’s build system, Cargo, along with shell scripts to simplify the build and execution process.
