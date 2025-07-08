@@ -6,12 +6,11 @@ use tokio::net::{TcpListener, TcpStream};
 use tokio::fs::File;
 use tokio::io::{AsyncReadExt, AsyncWriteExt};
 use std::process::exit;
-use std::time::Duration;
 
 #[tokio::main(flavor = "multi_thread")]
 async fn main() {
     // NOTE: configure your firewall to except LAN devices.
-    let socket = SocketAddrV4::new(Ipv4Addr::new(0, 0, 0, 0), 8080);
+    let socket = SocketAddrV4::new(Ipv4Addr::new(0, 0, 0, 0), 7878);
     let listener = match TcpListener::bind(socket).await {
         Ok(res) => res,
         Err(e) => {
@@ -58,17 +57,15 @@ async fn handle_client(mut stream: TcpStream) {
     let request_line = lines.next().unwrap_or("");
 
     // Handling requests by sending appropriate respond.
-    // Can use Axum here to build several roots.
+    // Creating HTTP parser, cause this server is mostly self-implemented (No Axum at all...)
     if buffer.starts_with(b"GET ") {
         let parts: Vec<&str> = request_line.split_whitespace().collect();
         if parts.len() >= 2 {
             let path = parts[1];
+            
             let file_path = match path {
                 "/" => "../web-apps/welcome.html".to_string(),
-                "/sleep" => {
-                    tokio::time::sleep(Duration::from_secs(5)).await;
-                    "../web-apps/welcome.html".to_string()
-                },
+                "/program" => "../web-apps/upload_program.html".to_string(),
                 _ => {
                     format!("../web-apps{}", path)
                 },
@@ -89,10 +86,18 @@ async fn handle_client(mut stream: TcpStream) {
             send_respond(stream, status, &final_path).await;
             return;
         }
+    } else if buffer.starts_with(b"POST ") {
+        // handle the uploading the program into the server
+    } else if buffer.starts_with(b"UPDATE "){
+        // handle the updating the program which is already on the server
+    } else if buffer.starts_with(b"DELETE") {
+        // removing the program from the server
+    } else {
+        println!("Undefined behaviour")
     }
 
     send_respond(stream, "HTTP/1.1 404 NOT FOUND\r\n\r\n", "../web-apps/404.html").await;
-    
+
 }
 
 // sending appropriate respond
@@ -107,7 +112,7 @@ async fn send_respond(mut stream: TcpStream, status: &str, file_name: &str) {
 
     let mut content = String::new();
     file.read_to_string(&mut content).await.unwrap();
-    
+
     let respond = format!("{}{}", status, content);
 
     match stream.write_all(respond.as_bytes()).await {
