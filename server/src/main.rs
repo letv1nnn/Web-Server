@@ -1,4 +1,4 @@
-extern crate server;
+// extern crate server;
 
 use std::net::{Ipv4Addr, SocketAddrV4};
 use std::path::Path;
