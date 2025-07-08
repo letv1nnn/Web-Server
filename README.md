@@ -2,7 +2,9 @@
 (Not completed yet)
 
 ## *Drscription*
-This project is a asynchronous and multithreaded web server that I built from scratch. I deployed it on an old laptop, effectively turning it into my own self-hosted server. Now I have a working, home-built web server running locally.
+This project is a asynchronous and multithreaded web server that I built from scratch. I've also implemented service with the same functionality using Axum & Tokio.
+
+I deployed it on an old laptop, effectively turning it into my own self-hosted server. Now I have a working, home-built web server running locally.
 
 ## *Current state*
 This server uses Tokio’s asynchronous, multithreaded runtime to handle incoming TCP connections concurrently without blocking threads. Each client connection is processed in its own async task, using non-blocking I/O to read HTTP requests and serve static files from disk efficiently. I've also set up the build system for this project using Cargo and shell scripts.
@@ -17,6 +19,7 @@ NOTE: If you are going to run this server on your PC, you need to configure the 
 git clone https://github.com/letv1nnn/Web-Server.git
 cd Web-Server/
 ```
+### *My own implementation of the server*
 - *Building*
 ```bash
 sh build/prep.sh
@@ -28,6 +31,19 @@ sh build/run.sh
 - *Cleaning*
 ```bash
 sh build/clean.sh
+```
+### *Axum & Tokio implementation*
+- *Building*
+```bash
+sh build/prep_axum.sh
+```
+- *Running*
+```bash
+sh build/run_axum.sh
+```
+- *Cleaning*
+```bash
+sh build/clean_axum.sh
 ```
 
 ## *Usage Scenarios*
