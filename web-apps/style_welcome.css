@@ -19,6 +19,18 @@ body {
     }
 }
 
+.card {
+    background-color: #1c1c1c;
+    padding: 2em 3em;
+    border-radius: 16px;
+    box-shadow: 0 8px 24px rgba(255, 255, 255, 0.1);
+    text-align: center;
+    max-width: 700px;
+    margin: auto;
+    animation: bounce 2s ease-in-out infinite;
+}
+
+
 .bounce {
     animation: bounce 2s ease-in-out infinite;
     text-align: center;
@@ -30,6 +42,29 @@ h1 {
 }
 
 p {
-    font-size: 2em;
+    font-size: 1.5em;
     margin: 0.2em;
+}
+
+.button-group {
+    margin-top: 1.5em;
+    display: flex;
+    gap: 1em;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+button {
+    background-color: #1e90ff;
+    color: white;
+    border: none;
+    padding: 0.75em 1.5em;
+    font-size: 1em;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+button:hover {
+    background-color: #63b3ed;
 }
