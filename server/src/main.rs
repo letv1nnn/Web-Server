@@ -67,7 +67,7 @@ async fn handle_client(mut stream: TcpStream) {
                 "/" => "../web-apps/welcome.html".to_string(),
                 "/program" => "../web-apps/upload_program.html".to_string(),
                 _ => {
-                    format!("../web-apps{}", path)
+                    format!("../web-apps/static/{}", path)
                 },
             };
 
