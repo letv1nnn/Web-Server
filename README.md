@@ -2,7 +2,7 @@
 (Not completed yet)
 
 ## *Drscription*
-This project is a asynchronous and multithreaded web server that I built from scratch. I've also implemented service with the same functionality using Axum & Tokio.
+This project is an asynchronous and multithreaded web server that I built from scratch. I've also implemented service with the same functionality using Axum & Tokio.
 
 I deployed it on an old laptop, effectively turning it into my own self-hosted server. Now I have a working, home-built web server running locally.
 
